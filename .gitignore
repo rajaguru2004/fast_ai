@@ -1,0 +1,24 @@
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Datasets and downloaded images
+bird_or_not/
+bird.jpg
+forest.jpg
+
+# Saved models (fastai saves weights here by default)
+models/
+
+# Downloaded packages / system files
+*.rpm
