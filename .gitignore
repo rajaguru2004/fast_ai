@@ -25,3 +25,4 @@ models/
 
 # Downloaded packages / system files
 *.rpm
+brain_tumor_classifier.pkl
