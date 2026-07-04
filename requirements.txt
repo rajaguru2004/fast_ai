@@ -1,5 +1,9 @@
 fastai
-ddgs
-fastdownload
-fastcore
+torch
+torchvision
+torchaudio
+jupyterlab
+notebook
 ipykernel
+kaggle
+python-dotenv

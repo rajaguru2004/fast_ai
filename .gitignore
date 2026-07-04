@@ -2,6 +2,7 @@
 .venv/
 venv/
 ENV/
+.env
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
@@ -16,6 +17,8 @@ __pycache__/
 bird_or_not/
 bird.jpg
 forest.jpg
+brain-tumor-mri-dataset.zip
+tumors/
 
 # Saved models (fastai saves weights here by default)
 models/
