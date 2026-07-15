@@ -20,8 +20,40 @@ def predict(image):
     
     return pred_class, confidence, prob_dict
 
+# JavaScript to redirect URL and force light mode theme parameter
+js_force_light = """
+() => {
+    const url = new URL(window.location.href);
+    if (url.searchParams.get('__theme') !== 'light') {
+        url.searchParams.set('__theme', 'light');
+        window.location.replace(url.href);
+    }
+}
+"""
+
+# Bulletproof CSS override to map dark mode variables to light mode colors
+css_force_light = """
+body, html, .gradio-container {
+    background-color: #f9fafb !important;
+}
+.dark {
+    --background-fill-primary: #f9fafb !important;
+    --background-fill-secondary: #f3f4f6 !important;
+    --block-background-fill: #ffffff !important;
+    --body-text-color: #111827 !important;
+    --body-text-color-subdued: #4b5563 !important;
+    --block-title-text-color: #1f2937 !important;
+    --block-label-text-color: #374151 !important;
+    --input-background-fill: #ffffff !important;
+    --input-border-color: #e5e7eb !important;
+    --button-secondary-background-fill: #f3f4f6 !important;
+    --button-secondary-text-color: #1f2937 !important;
+    --border-color-primary: #e5e7eb !important;
+}
+"""
+
 # Build customized UI using Blocks for a premium layout
-with gr.Blocks(theme=gr.themes.Soft(primary_hue="indigo", secondary_hue="slate")) as demo:
+with gr.Blocks() as demo:
     gr.HTML(
         """
         <div style="text-align: center; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -67,4 +99,8 @@ with gr.Blocks(theme=gr.themes.Soft(primary_hue="indigo", secondary_hue="slate")
     )
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(
+        theme=gr.themes.Soft(primary_hue="indigo", secondary_hue="slate"),
+        js=js_force_light,
+        css=css_force_light
+    )
