@@ -1,0 +1,5 @@
+fastai==2.8.7
+torch
+torchvision
+gradio
+pillow
